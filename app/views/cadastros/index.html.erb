@@ -1,0 +1,95 @@
+<% provide(:current_page, 'Consultar Cadastros') %>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box box-primary">
+      <%= form_tag(cadastros_path, method: :get, class: "form-inline", role: 'search') do %>
+          <div class="input-group">
+            <%= text_field_tag :q,
+                               params[:q],
+                               id: 'cadastro_search',
+                               autocomplete: :off,
+                               placeholder: 'Buscar',
+                               class: 'form-control' %>
+            <div class="input-group-btn search-panel">
+              <%= link_to 'Limpar', cadastros_url, class: "btn btn-default" %>
+              <%= submit_tag 'Buscar', name: nil, class: "btn btn-success" %>
+            </div>
+
+          </div>
+      <% end %>
+      <div class="col-xs-12">
+        <h3></h3><br>
+
+        <% if current_user.has_permission?('administrador') %>
+          <div class="pull-left">
+
+            <%= link_to 'Novo', new_cadastro_path, :class=> "btn btn-default" %>
+          </div>
+        <%end%>
+
+      </div>
+
+
+
+
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tp parte</th>
+          <th>Telefone</th>
+          <th>Cpf</th>
+          <th>Data cadastro</th>
+          <th>Local</th>
+          <th>User</th>
+          <th>Visualizado</th>
+          <th colspan="3"></th>
+        </tr>
+        </tr>
+        </thead>
+
+        <tbody>
+
+
+        <% @cadastros.each do |cadastro| %>
+            <tr>
+              <td><%= cadastro.nome %></td>
+              <td><%= cadastro.parte.nome %></td>
+              <td><%= cadastro.telefone %></td>
+              <td><%= cadastro.cpf %></td>
+              <td><%= cadastro.data_cadastro %></td>
+              <td><%= cadastro.local %></td>
+              <td class="col-xs-1">
+                <%= link_to cadastro do %>
+                    <i class="fa fa-2x fa-eye"></i>
+                <% end %>
+              </td>
+              <% if current_user.has_permission?('administrador') %>
+                <td class="col-xs-1">
+                  <%= link_to edit_cadastro_path(cadastro) do %>
+                      <i class="fa fa-2x fa-edit"></i>
+                  <% end %>
+                </td>
+                <td class="col-xs-1">
+                  <%= link_to cadastro, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?!' } do %>
+                      <i class="fa fa-2x fa-trash"></i>
+                  <% end %>
+                </td>
+              <%end%>
+              </tr>
+
+        <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <div class="push-right">
+
+      </div>
+
+    </div>
+  </div>
+</div>

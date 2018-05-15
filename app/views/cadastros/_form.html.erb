@@ -1,0 +1,63 @@
+<%= form_for(cadastro) do |f| %>
+    <% if cadastro.errors.any? %>
+        <div id="error_explanation" class="alert alert-warning">
+          <h2><%= pluralize(cadastro.errors.count, "erro(s) encontrado(s)") %></h2>
+
+          <ul>
+            <% cadastro.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %><br>
+
+    <div class="form-group">
+      <%= f.label :nome, "Nome" %>
+      <%= f.text_field :nome, class:'form-control', placeholder: 'Nome' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :parte_id, "Objeto" %>
+      <%= f.collection_select(:parte_id, Parte.all, :id, :nome, {include_blank: 'Selecione o tipo da parte'}, {:class=> "selectpicker"}  ) %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :cpf, "CPF/CNPJ"%>
+      <%= f.text_field :cpf, class:'form-control', placeholder: 'CPF/CNPJ'%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :telefone, "Telefone" %>
+      <%= f.text_field :telefone, class:'form-control', placeholder: 'Telefone' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :data_cadastro , "Data de Cadastro"%>
+      <div class="input-group date" data-provide="datepicker">
+        <div class="input-group-addon">
+          <i class="fa fa-calendar"></i>
+        </div>
+        <%= f.text_field :data_cadastro, class: 'form-control pull-right' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :local, "Local" %>
+      <%= f.text_field :local, class:'form-control', placeholder: 'Local' %>
+    </div>
+
+    <div class="text-group">
+      <%= f.label :visualizado, "Nome" %>
+      <%= f.text_field :visualizado, class:'form-control', placeholder: 'Nome' %>
+    </div>
+
+
+<% end %>
+
+<script>
+    $('.input-group.date').datepicker({
+        format: 'dd/mm/yyyy',
+        language: 'pt-BR',
+        todayHighlight: true
+    });
+</script>

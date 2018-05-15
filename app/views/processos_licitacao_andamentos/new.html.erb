@@ -1,0 +1,25 @@
+<% provide(:current_page, 'Cadastrar Licitação') %>
+
+<div class="row">
+  <div class="col-xs-12">
+    <!-- general form elements -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Formulário de cadastro de licitação em andamento</h3>
+      </div>
+
+      <%= form_for @processos_licitacao_andamento, html: {role: 'form'} do |f| %>
+      <div class="box-body">
+        <%= render 'form', f: f, processos_licitacao_andamento: @processos_licitacao_andamento%>
+
+    
+      <div class="box-footer">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </div>
+    </div>
+    <% end %>
+    </div>
+    <!-- /.box -->
+
+  </div>
+</div>

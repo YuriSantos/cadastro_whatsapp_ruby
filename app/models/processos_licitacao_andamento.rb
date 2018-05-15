@@ -1,0 +1,2 @@
+class ProcessosLicitacaoAndamento < ApplicationRecord
+end

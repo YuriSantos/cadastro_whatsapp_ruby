@@ -1,0 +1,140 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <%= image_tag 'militar.png', class: 'img-circl`e' %>
+      </div>
+      <div class="pull-left info">
+        <p><%= current_user.first_name %></p>
+      </div>
+    </div>
+
+    <!-- Menu goes here -->
+
+    <ul class="sidebar-menu">
+
+      <!-- BEGIN - MODULO RECURSOS HUMANOS -->
+      <% if current_user.has_permission?('administrador') %>
+      <li class="treeview <%= 'active' if controller?('users') %>">
+        <a href="#">
+          <i class="fa fa-users"></i>
+          <span>Usuários</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to users_path do %>
+              <i class="fa fa-circle-o"></i> Consultar Servidor
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_path do %>
+              <i class="fa fa-circle-o"></i> Cadastrar Servidor
+            <% end %>
+          </li>
+        </ul>
+      </li>
+
+
+
+      <% end %>
+      <!-- END - MODULO RECURSOS HUMANOS -->
+      <% if current_user.has_permission?('administrador') %>
+      <li class="treeview" >
+        <a href="#">
+          <i class="fa fa-university"></i>
+          <span>Cadastro de Adesão</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to cadastros_path do %>
+                <i class="fa fa-circle-o"></i> Listar cadastros
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_cadastro_path do %>
+                <i class="fa fa-circle-o"></i> Cadastrar nova Adesão
+            <% end %>
+          </li>
+        </ul>
+      </li>
+          <%end%>
+
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-university"></i>
+          <span>Lista de Adesão</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to cadastros_path do %>
+                <i class="fa fa-circle-o"></i> Listar cadastros
+            <% end %>
+          </li>
+        </ul>
+      </li>
+
+
+      <!-- BEGIN - MODULO ADMINISTRADOR DA APLICAÇÃO -->
+      <% if current_user.has_permission?('administrador') %>
+      <li class="treeview <%= 'active' if controller?('permissions') %>">
+        <a href="#">
+          <i class="fa fa-unlock-alt"></i>
+          <span>Permissões</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to permissions_path do %>
+              <i class="fa fa-circle-o"></i> Consultar Papeis
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_permission_path do %>
+              <i class="fa fa-circle-o"></i> Cadastrar Papel
+            <% end %>
+          </li>
+        </ul>
+      </li>
+
+      <% end %>
+      <!-- END - MODULO ADMINISTRADOR DO SISTEMA -->
+
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-unlock-alt"></i>
+              <span>Solicitações</span>
+              <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_to new_solicitacao_alt_path do %>
+                    <i class="fa fa-circle-o"></i> Solictar Alteração
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_solicitacao_exclusao_path do %>
+                    <i class="fa fa-circle-o"></i> Solicitar Exclusão
+                <% end %>
+              </li>
+             <li>
+                <%= link_to new_solicitacao_bloq_path do %>
+                    <i class="fa fa-circle-o"></i> Solicitar Bloqueio
+                <% end %>
+              </li>
+            </ul>
+          </li>
+
+
+    </ul>
+
+    <!-- end - menu -->
+
+  </section>
+  <!-- /.sidebar -->
+</aside>

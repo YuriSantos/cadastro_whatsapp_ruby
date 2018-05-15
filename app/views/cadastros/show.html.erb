@@ -1,0 +1,48 @@
+<% provide(:current_page, 'Adesão do WhatsApp') %>
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-primary">
+      <div class="box-body">
+
+        <ul class="list-group list-group-unbordered">
+          <li class="list-group-item">
+            <strong>Nome:</strong>
+            <%= @cadastro.nome %>
+          </li>
+
+          <li class="list-group-item">
+            <strong>Tipo da Parte:</strong>
+            <%= @cadastro.parte.nome %>
+          </li>
+
+          <li class="list-group-item">
+            <strong>CPF/CNPJ:</strong>
+            <%= @cadastro.cpf %>
+          </li>
+
+          <li class="list-group-item">
+            <strong>Data do Cadastro:</strong>
+            <%= @cadastro.data_cadastro %>
+          </li>
+          <% if current_user.has_permission?('administrador') %>
+              <li class="list-group-item">
+                <strong>Local:</strong>
+                <%= @cadastro.local %>
+              </li>
+
+              <li class="list-group-item">
+                <strong>Visualizado</strong>
+                <%= @cadastro.visualizado %>
+              </li>
+            </ul>
+
+
+          <%= link_to 'Editar', edit_cadastro_path(@cadastro), :class=> "btn btn-primary" %>
+            <%end%>
+        <%= link_to 'Voltar', cadastros_path, :class=> "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

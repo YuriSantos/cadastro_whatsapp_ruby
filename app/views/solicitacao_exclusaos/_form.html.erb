@@ -1,0 +1,31 @@
+
+<%= form_for(solicitacao_exclusao) do |f| %>
+    <% if solicitacao_exclusao.errors.any? %>
+        <div id="error_explanation" class="alert alert-warning">
+          <h2><%= pluralize(solicitacao_exclusao.errors.count, "erro(s) encontrado(s)") %></h2>
+
+          <ul>
+            <% solicitacao_exclusao.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %><br>
+
+    <div class="form-group">
+      <%= f.label :cadastro_id, "Nome a ser solicitado" %>
+      <%= f.collection_select(:cadastro_id, Cadastro.all, :id, :nome, {include_blank: 'Selecione o tipo da parte'}, {:class=> "selectpicker"}  ) %>
+    </div>
+
+    <div class="text-group">
+      <%= f.label :informacoes, "Solicitação:" %>
+      <%= f.text_area :informacoes, class:'form-control', placeholder: 'Digite aqui o motivo da exclusão' %>
+    </div>
+
+
+
+
+<% end %>
+
+
+

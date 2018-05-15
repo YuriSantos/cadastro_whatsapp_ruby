@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cadastro:</strong>
+  <%= @solicitacao_exclusao.cadastro_id %>
+</p>
+
+<p>
+  <strong>Informacoes:</strong>
+  <%= @solicitacao_exclusao.informacoes %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @solicitacao_exclusao.usuario %>
+</p>
+
+<p>
+  <strong>Visualizado:</strong>
+  <%= @solicitacao_exclusao.visualizado %>
+</p>
+
+<%= link_to 'Editar', edit_solicitacao_exclusao_path(@solicitacao_exclusao) %> |
+<%= link_to 'Concluido', solicitacao_exclusaos_path %>

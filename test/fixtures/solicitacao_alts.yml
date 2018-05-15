@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cadastro_id: 1
+  informacoes: MyString
+  usuario: MyString
+  visualizado: 1
+
+two:
+  cadastro_id: 1
+  informacoes: MyString
+  usuario: MyString
+  visualizado: 1

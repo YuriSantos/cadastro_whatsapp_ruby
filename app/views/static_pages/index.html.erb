@@ -1,0 +1,44 @@
+<div class="row">
+  <% if current_user.has_permission?('administrador') %>
+    <div>
+      <nav class="navbar" style="background-color: #696969">
+        <center><h1><font color=#FFFFFF>Painel de Acompanhamento</font></h1></center>
+      </nav>
+    </div><br><br>
+
+    <div><br>
+      <nav class="navbar"> <!--style="background-color: green"-->
+        <div class="col-xs-2">
+          <a href=solicitacao_exclusaos class="btn btn-lg btn-success">
+            <strong>Solicitações de Exclusão</strong><span class="badge"><%= @contadorSol_Excl_index.to_i %></span>
+          </a>
+
+          <div class="col-xs-10">
+            <a href=solicitacao_alts class="btn btn-lg btn-warning"><strong>Solicitações de Alterações</strong><span class="badge"><%= @contadorSol_Alt_index.to_i %></span></a>
+            <!--<center><button type="button" name="detalhes" class="btn btn-lg btn-warning"><strong>60 DIAS</strong>
+              <span class="badge">???</span></button></center><br>-->
+          </div>
+
+          <div class="col-xs-20">
+            <a href=solicitacao_bloqs class="btn btn-danger btn-lg"><strong>Solicitações de Bloqueio</strong><span class="badge"><%= @contadorSol_Bloq_index.to_i %></span></a>
+            <!--<center><button type="button" name="detalhes" class=" btn btn-danger btn-lg "><strong>30 DIAS
+              <span class="badge">4</span></strong></button></center><br>-->
+          </div>
+        </div>
+      </nav>
+    </div>
+      <%else%>
+      <div><br>
+        <nav class="navbar"> <!--style="background-color: green"-->
+          <div class="col-xs-2">
+            <a href=cadastros class="btn btn-lg btn-success">
+              <strong>Lista de cadastro</strong><span class="badge"></span>
+            </a>
+          </div>
+        </nav>
+      <%end%>
+  </div>
+
+
+
+</div>

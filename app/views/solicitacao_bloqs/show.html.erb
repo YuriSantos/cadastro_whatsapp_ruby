@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cadastro:</strong>
+  <%= @solicitacao_bloq.cadastro_id %>
+</p>
+
+<p>
+  <strong>Informacoes:</strong>
+  <%= @solicitacao_bloq.informacoes %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @solicitacao_bloq.usuario %>
+</p>
+
+<p>
+  <strong>Visualizado:</strong>
+  <%= @solicitacao_bloq.visualizado %>
+</p>
+
+<%= link_to 'Edit', edit_solicitacao_bloq_path(@solicitacao_bloq) %> |
+<%= link_to 'Back', solicitacao_bloqs_path %>

@@ -1,0 +1,25 @@
+<% provide(:current_page, 'Solicitação de alteração de informações do usuário') %>
+
+<div class="row">
+  <div class="col-xs-12">
+    <!-- general form elements -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Solicitação de alteração de informações do usuário</h3>
+      </div>
+
+      <%= form_for @solicitacao_alt, html: {role: 'form'} do |f| %>
+          <div class="box-body">
+            <%= render 'form', f: f, solicitacao_alt: @solicitacao_alt%>
+
+
+            <div class="box-footer">
+              <button type="submit" class="btn btn-primary">Solicitar</button>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <!-- /.box -->
+
+  </div>
+</div>

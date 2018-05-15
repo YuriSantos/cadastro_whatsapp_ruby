@@ -1,0 +1,77 @@
+<%= form_for(processos_licitacao_andamento) do |f| %>
+  <% if processos_licitacao_andamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(processos_licitacao_andamento.errors.count, "error") %> prohibited this processos_licitacao_andamento from being saved:</h2>
+
+      <ul>
+      <% processos_licitacao_andamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :numero_processo %>
+    <%= f.text_field :numero_processo, class:'form-control', placeholder: 'número do processo' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :responsavel_processo_cpl %>
+    <%= f.text_field :responsavel_processo_cpl, class: 'form-control', placeholder: 'responsável do processo' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :modalidade_licitacao %>
+    <%= f.text_field :modalidade_licitacao, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :objeto %>
+    <%= f.text_field :objeto, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :quantidade %>
+    <%= f.text_field :quantidade, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :registro_cge %>
+    <%= f.text_field :registro_cge, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :data_publicacao_DOE %>
+    <div class="input-group date" data-provide="datepicker">
+      <div class="input-group-addon">
+        <i class="fa fa-calendar"></i>
+      </div>
+      <%= f.text_field :data_publicacao_DOE, class: 'form-control pull-right' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :valor_ivestimento %>
+    <%= f.text_field :valor_ivestimento, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :empresa_vencedora %>
+    <%= f.text_field :empresa_vencedora , class: 'form-control'%>
+  </div>
+
+  <div class="field">
+    <%= f.label :situacao %>
+    <%= f.text_field :situacao , class: 'form-control'%>
+  </div>
+
+
+<% end %>
+<script>
+    $('.input-group.date').datepicker({
+        format: 'dd/mm/yyyy',
+        language: 'pt-BR',
+        todayHighlight: true
+    });
+</script>

@@ -1,0 +1,1 @@
+json.partial! "processos_licitacao_andamentos/processos_licitacao_andamento", processos_licitacao_andamento: @processos_licitacao_andamento

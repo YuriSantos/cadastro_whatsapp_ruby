@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Processos Licitacao Andamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero processo</th>
+      <th>Responsavel processo cpl</th>
+      <th>Modalidade licitacao</th>
+      <th>Objeto</th>
+      <th>Quantidade</th>
+      <th>Registro cge</th>
+      <th>Data publicacao doe</th>
+      <th>Valor ivestimento</th>
+      <th>Empresa vencedora</th>
+      <th>Situacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @processos_licitacao_andamentos.each do |processos_licitacao_andamento| %>
+      <tr>
+        <td><%= processos_licitacao_andamento.numero_processo %></td>
+        <td><%= processos_licitacao_andamento.responsavel_processo_cpl %></td>
+        <td><%= processos_licitacao_andamento.modalidade_licitacao %></td>
+        <td><%= processos_licitacao_andamento.objeto %></td>
+        <td><%= processos_licitacao_andamento.quantidade %></td>
+        <td><%= processos_licitacao_andamento.registro_cge %></td>
+        <td><%= processos_licitacao_andamento.data_publicacao_DOE %></td>
+        <td><%= processos_licitacao_andamento.valor_ivestimento %></td>
+        <td><%= processos_licitacao_andamento.empresa_vencedora %></td>
+        <td><%= processos_licitacao_andamento.situacao %></td>
+        <td><%= link_to 'Show', processos_licitacao_andamento %></td>
+        <td><%= link_to 'Edit', edit_processos_licitacao_andamento_path(processos_licitacao_andamento) %></td>
+        <td><%= link_to 'Destroy', processos_licitacao_andamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Processos Licitacao Andamento', new_processos_licitacao_andamento_path %>

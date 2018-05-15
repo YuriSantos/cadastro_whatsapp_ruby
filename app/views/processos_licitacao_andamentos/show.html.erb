@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero processo:</strong>
+  <%= @processos_licitacao_andamento.numero_processo %>
+</p>
+
+<p>
+  <strong>Responsavel processo cpl:</strong>
+  <%= @processos_licitacao_andamento.responsavel_processo_cpl %>
+</p>
+
+<p>
+  <strong>Modalidade licitacao:</strong>
+  <%= @processos_licitacao_andamento.modalidade_licitacao %>
+</p>
+
+<p>
+  <strong>Objeto:</strong>
+  <%= @processos_licitacao_andamento.objeto %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @processos_licitacao_andamento.quantidade %>
+</p>
+
+<p>
+  <strong>Registro cge:</strong>
+  <%= @processos_licitacao_andamento.registro_cge %>
+</p>
+
+<p>
+  <strong>Data publicacao doe:</strong>
+  <%= @processos_licitacao_andamento.data_publicacao_DOE %>
+</p>
+
+<p>
+  <strong>Valor ivestimento:</strong>
+  <%= @processos_licitacao_andamento.valor_ivestimento %>
+</p>
+
+<p>
+  <strong>Empresa vencedora:</strong>
+  <%= @processos_licitacao_andamento.empresa_vencedora %>
+</p>
+
+<p>
+  <strong>Situacao:</strong>
+  <%= @processos_licitacao_andamento.situacao %>
+</p>
+
+<%= link_to 'Edit', edit_processos_licitacao_andamento_path(@processos_licitacao_andamento) %> |
+<%= link_to 'Back', processos_licitacao_andamentos_path %>
