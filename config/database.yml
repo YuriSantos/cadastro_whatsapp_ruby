@@ -59,7 +59,7 @@ test:
   <<: *default
   database: cadastro_whatsapp_test
   username: postgres
-  password: jfpb
+  password: 
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
